@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Elijah Potter" />
+  <meta name="description" content="A portfolio for software developer Elijah Potter" />
+  <meta name="keywords"
+    content="Elijah, Potter, Resume, Portfolio, Projects, Freelance, Software, Dev, Developmer, Code" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/icons/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <title>Elijah Potter</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>Elijah Potter</h1>
+    <ul class="navigation">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="burger-menu" id="burger-menu">
+      <ion-icon class="bars" name="menu-outline"></ion-icon>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <img src="assets/images/ep_logo.svg" alt="Elijah-Potter" loading="lazy" class="hero-img" />
+    <div class="bio animate__animated animate__backInUp">
+      <h2 class="bio-title">About Me</h2>
+      <p class="bio-text">
+        Thanks for stopping by! I'm Elijah, a software developer based in Salt Lake City, Utah.
+        I am currently pursuing a degree in Computer Science at the University of Utah. I specialize
+        in Python, Java, and HTML but am always looking to learn more. Please feel free to reach
+        out to me for inquiries or collaborations.
+      </p>
+    </div>
+  </section>
+
+  <!-- More about -->
+  <section class="more-about">
+    <h2>More About Me</h2>
+    <p>
+      I have been interested in the STEM field for as long as I can remember. My father was an electrical engineer,
+      and he was an incredible inspiration for me growing up. I have always been fascinated by the way things work and
+      have fond memories of taking apart my toys (and occasionally my parents' valuables) to see how they worked. This
+      fascination has stuck with me well-into my adulthood, where I am still contantly seeking to learn more about the
+      world around me.
+    </p>
+    <p>
+      Despite my intense interest in science and technology, it took many years to find where exactly I wanted to focus
+      my studies for a future career. When I first started college, I figured I would follow in the footsteps of my
+      father
+      and study electrical engineering. However, it was in the midst of my first programming class that I realized my
+      true
+      passion was in software development. Since then I have fully dedicated myself to the craft, and I am excited to
+      see where
+      it takes me.
+    </p>
+    <p>
+      Besides technology, I am greatly passionate about art and music. I have been playing the guitar since I was 8
+      years old,
+      and am proficient in other instruments such as the piano, bass, and viola. I have played in several bands and
+      orchestras
+      through the years and have even written and recorded my own music. I also enjoy drawing, writing, and editing
+      photos and
+      videos. Where I spend most of my time, however, is with my wife. We have been married for about a year and greatly
+      enjoy
+      hiking, camping, and playing video games together.
+    </p>
+  </section>
+
+  <!-- Skills section -->
+  <section class="skills" id="skills">
+    <h2 class="skill-header">My Top Skills</h2>
+
+    <div class="first-set animate__animated animate__pulse">
+      <figure>
+        <img src="assets/icons/icons8-python.svg" alt="Python" loading="lazy" class="icon icon-card" />
+        <figcaption>Python</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/icons/icons8-java.svg" alt="Java" loading="lazy" class="icon icon-card" />
+        <figcaption>Java</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/icons/icons8-html-5.svg" alt="HTML" loading="lazy" class="icon icon-card" />
+        <figcaption>HTML</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Projects section -->
+  <section class="projects" id="projects">
+    <h2 class="projects-title">Recent Projects</h2>
+    <div class="projects-container animate__animated animate__pulse">
+      <div class="project-container project-card">
+        <img src="assets/images/NLG_text.png" alt="natural language generator" loading="lazy" class="project-pic" />
+        <h3 class="project-title">Natural Language Generator</h3>
+        <p class="project-details">
+          A simple natural language generator that uses a Markov chain to generate
+          unique text based off of a given input.
+        </p>
+        <a href="https://github.com/Celestron1123/Natural-Language-Generator" target="_blank" class="project-link">Check
+          it Out</a>
+      </div>
+      <div class="project-container project-card">
+        <img src="assets/images/lights-out.png" alt="lights out" loading="lazy" class="project-pic" />
+        <h3 class="project-title">Lights Out</h3>
+        <p class="project-details">
+          A simple puzzle game based off of the 1995 electronic game
+          "Lights Out" by Tiger Electronics.
+        </p>
+        <a href="https://github.com/Celestron1123/Lights-Out-Game" target="_blank" class="project-link">Check it Out</a>
+      </div>
+      <div class="project-container project-card">
+        <img src="assets/images/photo-editor.png" alt="photo editor" loading="lazy" class="project-pic" />
+        <h3 class="project-title">Photo Editor</h3>
+        <p class="project-details">
+          A basic photo editor that can apply several different filters
+          to a photo and save it to a computer.
+        </p>
+        <a href="https://github.com/Celestron1123/Photo-Editor" target="_blank" class="project-link">Check it Out</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section class="contact" id="contact">
+    <h2>Get In Touch With Me</h2>
+    <div class="contact-form-container">
+      <div class="contact-form">
+        <form action="https://formspree.io/f/mdoqbley" method="POST">
+          <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="sender-name" placeholder="Enter Your Name" class="input-field"
+              required />
+          </div>
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field"
+              required />
+          </div>
+          <div class="form-control">
+            <label for="message">Message</label>
+            <textarea id="message" cols="60" rows="10" placeholder="Enter Your Message" name="message"
+              class="input-field" required></textarea>
+          </div>
+          <input type="submit" value="Submit" id="submit-btn" class="submit-btn" />
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials-->
+  <div class="socials">
+    <a href="https://www.instagram.com/elijah.potts/" target="_blank"><img src="assets/icons/icons8-instagram.svg"
+        alt="Instagram" loading="lazy" class="socicon" /></a>
+    <a href="https://www.linkedin.com/in/elijah-a-potter/" target="_blank"><img src="assets/icons/icons8-linkedin.svg"
+        alt="Linkedin" loading="lazy" class="socicon" /></a>
+    <a href="https://github.com/Celestron1123/" target="_blank"><img src="assets/icons/icons8-github.svg" alt="Github"
+        class="socicon" /></a>
+    <a href="https://discord.com/users/588518350964129803/" target="_blank"><img src="assets/icons/icons8-discord.svg"
+        alt="Discord" class="socicon" /></a>
+  </div>
+
+  <!-- Footer section -->
+  <footer>
+    <p class="copy">&copy; Copyright 2024</p>
+    <p class="copy">
+      Built by Elijah Potter, with artwork by Lauren Cunningham
+    </p>
+  </footer>
+
+  <!-- Website scripts -->
+  <script src="assets/js/app.js"></script>
+
+  <!-- Ion icons scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
