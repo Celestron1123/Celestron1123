@@ -1,4 +1,5 @@
 const burger = document.querySelector("#burger-menu");
+const theme = document.querySelector("#theme-toggle");
 const ul = document.querySelector("nav ul");
 const navLink = document.querySelectorAll(".nav-link");
 const secretCode = "aappscsc";
@@ -6,6 +7,19 @@ var key = "";
 
 burger.addEventListener("click", () => {
     ul.classList.toggle("show");
+});
+
+// Theme button
+theme.addEventListener("click", function () {
+    var themeStyle = document.querySelector("#theme-style");
+    var themeIcon = document.querySelector("#theme-icon");
+    if (themeStyle.getAttribute("href") == "assets/css/darkstyles.css") {
+        themeStyle.setAttribute("href", "assets/css/styles.css");
+        themeIcon.setAttribute("name", "moon-outline");
+    } else {
+        themeStyle.setAttribute("href", "assets/css/darkstyles.css");
+        themeIcon.setAttribute("name", "sunny-outline");
+    }
 });
 
 // About button
