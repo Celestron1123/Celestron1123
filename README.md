@@ -1,52 +1,35 @@
-# My Bio Website
+# My Profile
 
-Welcome to the repository for my personal bio website! This site showcases my background, skills, projects, and other relevant information.
+Welcome to my GitHub profile! I'm Elijah, a Computer Science student at the University of Utah. Here, you will find a variety of projects and repositories that showcase my skills and interests in programming and computer science.
 
-## Table of Contents
+## About Me
 
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Usage](#usage)
-- [Special Thanks](#special-thanks)
-- [License](#license)
-- [Contact](#contact)
+- **Name:** Elijah
+- **Location:** Salt Lake City, Utah
+- **Education:** Computer Science major at the University of Utah
+- **Interests:** Programming, Art, History, Literature, Science
 
-## Overview
+## Skills
 
-This website serves as an online resume and portfolio. It includes sections such as:
+- **Programming Languages:** Python, Java
+- **Web Development:** HTML, CSS, JavaScript
+- **Tools & Platforms:** GitHub, VS Code
 
-- About Me
-- Skills
-- Projects
-- Contact
+## Projects
 
-## Features
+### [My Bio Website](https://elijahpotter.com)
+A personal bio website showcasing my background, skills, projects, and contact information. Built with HTML, CSS, and JavaScript.
 
-- Responsive design
-- Interactive elements
-- Easy navigation
-- Social media integration
-- Dark mode!
+### [Natrual Language Generator](https://github.com/Celestron1123/Natural-Language-Generator)
+A model designed to analyze a body of text and produce a unique phrase based off of subsequent word frequency.
 
-## Technologies Used
+## Get in Touch
 
-- HTML5
-- CSS3
-- JavaScript
-- Github Pages
+I am always open to discussing new projects, collaborations, or opportunities. Feel free to reach out to me through any of the following channels:
 
-## Special Thanks
+- **Email:** epot1123@gmail.com
+- **LinkedIn:** [My Profile](https://www.linkedin.com/in/elijah-a-potter/)
 
-- Kolade Chris for template and instruction
-- W3Schools for code help
+## Acknowledgements
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries or feedback, feel free to reach out:
-
-- Email: epot1123@gmail.com
+I would like to thank my professors, peers, and the open-source community for their support.
