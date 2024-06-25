@@ -20,7 +20,7 @@ Welcome to my GitHub profile! I'm Elijah, a Computer Science student at the Univ
 ### [My Bio Website](https://www.elijahpotter.com)
 A personal bio website showcasing my background, skills, projects, and contact information. Built with HTML, CSS, and JavaScript.
 
-### [Natrual Language Generator](https://github.com/Celestron1123/Natural-Language-Generator)
+### [Natural Language Generator](https://github.com/Celestron1123/Natural-Language-Generator)
 A model designed to analyze a body of text and produce a unique phrase based off of subsequent word frequency.
 
 ## Get in Touch
