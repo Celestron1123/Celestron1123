@@ -4,7 +4,7 @@ Welcome to my GitHub profile! I'm Elijah, a Computer Science student at the Univ
 
 ## About Me
 
-- **Name:** Elijah
+- **Name:** Elijah Potter
 - **Location:** Salt Lake City, Utah
 - **Education:** Computer Science major at the University of Utah
 - **Interests:** Programming, Art, History, Literature, Science
@@ -17,7 +17,7 @@ Welcome to my GitHub profile! I'm Elijah, a Computer Science student at the Univ
 
 ## Projects
 
-### [My Bio Website](https://elijahpotter.com)
+### [My Bio Website](https://www.elijahpotter.com)
 A personal bio website showcasing my background, skills, projects, and contact information. Built with HTML, CSS, and JavaScript.
 
 ### [Natrual Language Generator](https://github.com/Celestron1123/Natural-Language-Generator)
