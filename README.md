@@ -27,7 +27,7 @@ A model designed to analyze a body of text and produce a unique phrase based off
 
 I am always open to discussing new projects, collaborations, or opportunities. Feel free to reach out to me through any of the following channels:
 
-- **Email:** epot1123@gmail.com
+- **Email:** elijah.a.potter@gmail.com
 - **LinkedIn:** [My Profile](https://www.linkedin.com/in/elijah-a-potter/)
 
 ## Acknowledgements
