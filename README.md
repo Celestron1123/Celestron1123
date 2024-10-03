@@ -11,9 +11,9 @@ Welcome to my GitHub profile! I'm Elijah, a Computer Science student at the Univ
 
 ## Skills
 
-- **Programming Languages:** Python, Java
+- **Programming Languages:** Python, Java, C#
 - **Web Development:** HTML, CSS, JavaScript
-- **Tools & Platforms:** GitHub, VS Code
+- **Tools & Platforms:** GitHub, VS Code, Visual Studio
 
 ## Projects
 
