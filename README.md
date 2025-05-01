@@ -23,6 +23,9 @@ A personal bio website showcasing my background, skills, projects, and contact i
 ### [Natural Language Generator](https://github.com/Celestron1123/Natural-Language-Generator)
 A model designed to analyze a body of text and produce a unique phrase based off of subsequent word frequency.
 
+### [Brewing Sim](https://github.com/Celestron1123/Brewing-Sim)
+An educational program about the distillation process throughout the world.
+
 ## Get in Touch
 
 I am always open to discussing new projects, collaborations, or opportunities. Feel free to reach out to me through any of the following channels:
