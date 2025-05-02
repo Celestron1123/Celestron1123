@@ -11,7 +11,7 @@ Welcome to my GitHub profile! I'm Elijah, a Computer Science student at the Univ
 
 ## Skills
 
-- **Programming Languages:** Python, Java, C#
+- **Programming Languages:** Python, Java, C#, C++
 - **Web Development:** HTML, CSS, JavaScript
 - **Tools & Platforms:** GitHub, VS Code, Visual Studio
 
@@ -25,6 +25,9 @@ A model designed to analyze a body of text and produce a unique phrase based off
 
 ### [Brewing Sim](https://github.com/Celestron1123/Brewing-Sim)
 An educational program about the distillation process throughout the world.
+
+### [Sprite Editor](https://github.com/Celestron1123/Sprite-Editor)
+A lightweight sprite editor to make pixel art animations.
 
 ## Get in Touch
 
