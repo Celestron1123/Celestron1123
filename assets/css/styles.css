@@ -6,8 +6,8 @@
   --color-black-solid: rgb(0, 0, 0);
 
   /* Element Variables */
-  --color-text-primary: #c4eedf;
-  --color-text-secondary: #51a776;
+  --color-text-primary: #d8fff2;
+  --color-text-secondary: #a9dbbf;
   --color-background-primary: #151515;
   --color-background-secondary: #0f0f0f;
   --color-shadow: rgba(0, 0, 0, 0.1);
@@ -122,7 +122,7 @@ body {
 .navbar-link-resume {
   padding: 10px 20px;
   border: 2px solid var(--color-highlight-primary);
-  border-radius: 6px;
+  border-radius: 10px;
   color: var(--color-highlight-primary);
   font-weight: 600;
   transition: all 0.3s ease;
@@ -154,61 +154,6 @@ body {
   background-color: var(--color-text-primary);
   border-radius: 2px;
   transition: all 0.3s ease;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-menu {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: var(--color-background-primary);
-    backdrop-filter: blur(10px);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .navbar-menu.active {
-    max-height: 400px;
-    border-bottom: 1px solid rgba(var(--rgb-black), 0.1);
-  }
-
-  .navbar-list {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-  }
-
-  .navbar-list li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar-link {
-    display: block;
-    padding: 10px 0;
-  }
-
-  .navbar-link-resume {
-    border: 2px solid var(--color-highlight-primary);
-    padding: 10px 20px;
-    border-radius: 6px;
-  }
-
-  .navbar-container {
-    height: 60px;
-  }
-
-  .navbar-logo a {
-    font-size: 20px;
-  }
 }
 
 /* Main Content */
@@ -287,7 +232,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   perspective: 1000px;
   position: relative;
 }
@@ -327,7 +271,6 @@ p {
   transform: translateZ(25px);
 }
 
-/* Smooth reset when mouse leaves */
 .profile-tilt.reset {
   transform: rotateX(0) rotateY(0);
 }
@@ -345,4 +288,125 @@ p {
   z-index: 10;
   box-sizing: border-box;
   transform: translateZ(75px);
+}
+
+/* Profile Social Links */
+.instagram-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.instagram-link img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) saturate(100%) invert(77%) sepia(13%) saturate(1088%) hue-rotate(102deg) brightness(91%) contrast(87%);
+  transition: filter 0.3s ease;
+}
+
+.instagram-link:hover img {
+  filter: brightness(0) saturate(100%) invert(71%) sepia(85%) saturate(434%) hue-rotate(103deg) brightness(98%) contrast(92%);
+  transform: scale(1.1);
+}
+
+/* Home content styles */
+.home-content {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.profile-container {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.home-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+  /* Navbar Adjustments */
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--color-background-primary);
+    backdrop-filter: blur(10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    max-height: 400px;
+    border-bottom: 1px solid rgba(var(--rgb-black), 0.1);
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .navbar-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-link {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .navbar-link-resume {
+    border: 2px solid var(--color-highlight-primary);
+    padding: 10px 20px;
+    border-radius: 6px;
+  }
+
+  .navbar-container {
+    height: 60px;
+  }
+
+  .navbar-logo a {
+    font-size: 20px;
+  }
+
+  /* Home Section Adjustments */
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 0;
+    gap: 40px;
+  }
+
+  .home-text {
+    max-width: 100%;
+  }
 }
