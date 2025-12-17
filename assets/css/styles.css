@@ -289,6 +289,7 @@ p {
   align-items: center;
   min-height: 100vh;
   perspective: 1000px;
+  position: relative;
 }
 
 .profile-tilt {
@@ -317,13 +318,13 @@ p {
 
 .profile-layer-bg {
   z-index: 1;
-  transform: translateZ(-50px);
+  transform: translateZ(-25px) scale(1.1);
 }
 
 .profile-layer-fg {
   z-index: 2;
   transform-style: preserve-3d;
-  transform: translateZ(50px);
+  transform: translateZ(25px);
 }
 
 /* Smooth reset when mouse leaves */
@@ -343,4 +344,5 @@ p {
   pointer-events: none;
   z-index: 10;
   box-sizing: border-box;
+  transform: translateZ(75px);
 }

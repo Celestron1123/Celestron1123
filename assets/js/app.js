@@ -25,7 +25,7 @@ document.addEventListener('click', (e) => {
 const profileTilt = document.getElementById('profileTilt');
 const profileLayerBg = document.querySelector('.profile-layer-bg');
 const profileLayerFg = document.querySelector('.profile-layer-fg');
-const MAX_ROTATION = 15; // degrees
+const MAX_ROTATION = 5; // degrees
 
 profileTilt.addEventListener('mousemove', (e) => {
     const rect = profileTilt.getBoundingClientRect();
@@ -44,16 +44,16 @@ profileTilt.addEventListener('mousemove', (e) => {
     const bgRotateY = rotateY * 0.6;
 
     profileTilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    profileLayerBg.style.transform = `translateZ(-50px) rotateX(${bgRotateX}deg) rotateY(${bgRotateY}deg)`;
-    profileLayerFg.style.transform = `translateZ(50px)`;
+    profileLayerBg.style.transform = `translateZ(-25px) scale(1.1) rotateX(${bgRotateX}deg) rotateY(${bgRotateY}deg)`;
+    profileLayerFg.style.transform = `translateZ(25px)`;
 
     profileTilt.classList.remove('reset');
 });
 
 profileTilt.addEventListener('mouseleave', () => {
     profileTilt.style.transform = 'rotateX(0) rotateY(0)';
-    profileLayerBg.style.transform = 'translateZ(-50px) rotateX(0) rotateY(0)';
-    profileLayerFg.style.transform = 'translateZ(50px)';
+    profileLayerBg.style.transform = 'translateZ(-25px) scale(1.1) rotateX(0) rotateY(0)';
+    profileLayerFg.style.transform = 'translateZ(25px)';
     profileTilt.classList.add('reset');
 });
 
