@@ -264,7 +264,6 @@ p {
   transform: scaleX(1);
 }
 
-/* scrollbar styling */
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -281,4 +280,67 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--rgb-white), 0.8);
+}
+
+/* Profile Parallax Tilt Effect */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  perspective: 1000px;
+}
+
+.profile-tilt {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.profile-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.profile-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.profile-layer-bg {
+  z-index: 1;
+  transform: translateZ(-50px);
+}
+
+.profile-layer-fg {
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: translateZ(50px);
+}
+
+/* Smooth reset when mouse leaves */
+.profile-tilt.reset {
+  transform: rotateX(0) rotateY(0);
+}
+
+.profile-tilt::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 10px solid var(--color-highlight-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  box-sizing: border-box;
 }
