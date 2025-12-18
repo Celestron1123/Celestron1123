@@ -6,19 +6,30 @@
   --color-black-solid: rgb(0, 0, 0);
 
   /* Element Variables */
-  --color-text-primary: #d8fff2;
-  --color-text-secondary: #a9dbbf;
+  --color-text-primary: rgba(255, 255, 255, 0.92);
+  --color-text-secondary: rgba(255, 255, 255, 0.68);
   --color-background-primary: #151515;
   --color-background-secondary: #0f0f0f;
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-background-header: rgba(21, 21, 21, 0.1);
+
+  /* Highlight Colors */
   --color-highlight-primary: #3cd99d;
+  --color-highlight-secondary: #8b5cf6;
+  --color-highlight-tertiary: #40c8ff;
+  --color-highlight-pink: #ec4899;
+  --color-highlight-cyan: #2dd4bf;
+  --color-highlight-coral: #fb7185;
+  --color-highlight-gold: #facc15;
+  --color-highlight-orange: #f97316;
 
   /* RGB Color Variables */
   /* Example: rgba(var(--rgb-primary), 0.5); */
   --rgb-primary: 66, 153, 225;
   --rgb-black: 0, 0, 0;
   --rgb-white: 255, 255, 255;
+
+  --social-icon-size: 40px;
 }
 
 * {
@@ -232,8 +243,9 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
+  /* perspective: 1000px; */
   position: relative;
+  flex-direction: column;
 }
 
 .profile-tilt {
@@ -242,6 +254,8 @@ p {
   height: 300px;
   transform-style: preserve-3d;
   transition: transform 0.1s ease-out;
+
+  perspective: 1000px;
 }
 
 .profile-layer {
@@ -262,7 +276,7 @@ p {
 
 .profile-layer-bg {
   z-index: 1;
-  transform: translateZ(-25px) scale(1.1);
+  transform: translateZ(-25px) scale(1.05);
 }
 
 .profile-layer-fg {
@@ -291,22 +305,26 @@ p {
 }
 
 /* Profile Social Links */
-.instagram-link {
-  display: block;
-  margin-top: 20px;
-  text-align: center;
-  transition: transform 0.3s ease;
+.social-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
 }
 
-.instagram-link img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0) saturate(100%) invert(77%) sepia(13%) saturate(1088%) hue-rotate(102deg) brightness(91%) contrast(87%);
-  transition: filter 0.3s ease;
+.social-link i {
+  font-size: var(--social-icon-size);
+  color: var(--color-highlight-tertiary);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.instagram-link:hover img {
-  filter: brightness(0) saturate(100%) invert(71%) sepia(85%) saturate(434%) hue-rotate(103deg) brightness(98%) contrast(92%);
+.social-link:hover {
+  transform: translateY(-2px);
+  background-color: rgba(var(--rgb-white), 0.06);
+}
+
+.social-link:hover i {
+  color: var(--color-white);
   transform: scale(1.1);
 }
 
@@ -338,8 +356,26 @@ p {
 }
 
 .home-text p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
+}
+
+/* Section Header Styles */
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.section-line {
+  height: 2px;
+  background: linear-gradient(to right, var(--color-highlight-primary), var(--color-highlight-cyan), transparent);
+  box-shadow: 0 0 15px rgba(60, 217, 157, 0.3);
 }
 
 /* Mobile Responsiveness */

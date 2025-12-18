@@ -25,7 +25,7 @@ document.addEventListener('click', (e) => {
 const profileTilt = document.getElementById('profileTilt');
 const profileLayerBg = document.querySelector('.profile-layer-bg');
 const profileLayerFg = document.querySelector('.profile-layer-fg');
-const MAX_ROTATION = 5; // degrees
+const MAX_ROTATION = 7; // degrees
 
 profileTilt.addEventListener('mousemove', (e) => {
     const rect = profileTilt.getBoundingClientRect();
@@ -44,7 +44,7 @@ profileTilt.addEventListener('mousemove', (e) => {
     const bgRotateY = rotateY * 0.6;
 
     profileTilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    profileLayerBg.style.transform = `translateZ(-25px) scale(1.1) rotateX(${bgRotateX}deg) rotateY(${bgRotateY}deg)`;
+    profileLayerBg.style.transform = `translateZ(-25px) scale(1.05) rotateX(${bgRotateX}deg) rotateY(${bgRotateY}deg)`;
     profileLayerFg.style.transform = `translateZ(25px)`;
 
     profileTilt.classList.remove('reset');
@@ -52,16 +52,7 @@ profileTilt.addEventListener('mousemove', (e) => {
 
 profileTilt.addEventListener('mouseleave', () => {
     profileTilt.style.transform = 'rotateX(0) rotateY(0)';
-    profileLayerBg.style.transform = 'translateZ(-25px) scale(1.1) rotateX(0) rotateY(0)';
+    profileLayerBg.style.transform = 'translateZ(-25px) scale(1.05) rotateX(0) rotateY(0)';
     profileLayerFg.style.transform = 'translateZ(25px)';
     profileTilt.classList.add('reset');
 });
-
-// TODO: Remove this code later; it is just to create scrollable content for testing the navbar
-// const section = document.querySelector('#home');
-// const paragraph = document.querySelector('#home p');
-
-// for (let i = 0; i < 99; i++) {
-//     const newParagraph = paragraph.cloneNode(true);
-//     section.appendChild(newParagraph);
-// }
