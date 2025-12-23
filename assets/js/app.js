@@ -5,12 +5,14 @@ const navbarLinks = document.querySelectorAll('.navbar-link');
 
 navbarToggle.addEventListener('click', () => {
     navbarMenu.classList.toggle('active');
+    navbarToggle.classList.toggle('active');
 });
 
 // Close menu when a link is clicked
 navbarLinks.forEach(link => {
     link.addEventListener('click', () => {
         navbarMenu.classList.remove('active');
+        navbarToggle.classList.remove('active');
     });
 });
 
@@ -18,6 +20,7 @@ navbarLinks.forEach(link => {
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.navbar')) {
         navbarMenu.classList.remove('active');
+        navbarToggle.classList.remove('active');
     }
 });
 
@@ -133,3 +136,54 @@ skillCards.forEach(card => {
         }, 600);
     });
 });
+
+// Contact Form Handler with Formspree
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
+
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline-block';
+        formStatus.style.display = 'none';
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('https://formspree.io/f/mjgblqao', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            showStatus('Oops! Something went wrong. Please try again.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline-block';
+            btnLoader.style.display = 'none';
+        }
+    });
+}
+
+function showStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
+    formStatus.style.display = 'block';
+}
