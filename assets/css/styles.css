@@ -723,8 +723,6 @@ p {
   background-position: 0% var(--posy), var(--posx) var(--posy), var(--posx) var(--posy);
 
   filter: brightness(calc(0.55 + var(--hyp) * 0.25)) contrast(1.25) saturate(0.55);
-
-  /* TODO: should this go here? */
   clip-path: inset(6% 5.5% 12% 5.5% round 10px);
 }
 
