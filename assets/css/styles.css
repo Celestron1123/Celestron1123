@@ -949,11 +949,3 @@ p {
     padding: 1rem;
   }
 }
-
-/* so smol */
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
