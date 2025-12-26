@@ -2,217 +2,327 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Elijah Potter" />
-  <meta name="description" content="A portfolio for software developer Elijah Potter" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <title>Elijah Potter | Portfolio</title>
+  <meta name="description"
+    content="The portfolio of Elijah Potter, a software developer specializing in building exceptional digital experiences, scalable web applications, and clean code.">
   <meta name="keywords"
-    content="Elijah, Potter, Resume, Portfolio, Projects, Freelance, Software, Dev, Developmer, Code" />
+    content="Elijah Potter, Software Developer, Full Stack Engineer, Web Development, Portfolio, JavaScript, React, Python, C">
+  <meta name="author" content="Elijah Potter">
 
-  <link id="theme-style" rel="stylesheet" href="assets/css/styles.css" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.elijahpotter.com/">
+  <meta property="og:title" content="Elijah Potter | Software Developer">
+  <meta property="og:description"
+    content="Building scalable software and intuitive user interfaces. Check out my projects.">
+  <meta property="og:image" content="https://www.elijahpotter.com/assets/images/og_image.png">
+  <!-- TODO: Make sure this works -->
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-  <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/icons/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.elijahpotter.com/">
+  <meta name="twitter:title" content="Elijah Potter | Software Developer">
+  <meta name="twitter:description" content="Building scalable software and intuitive user interfaces.">
+  <meta name="twitter:image" content="https://www.elijahpotter.com/assets/images/og_image.png">
+  <!-- TODO: Make sure this works -->
 
-  <title>Elijah Potter</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav>
-    <h1>Elijah Potter</h1>
-    <button class="theme-toggle" id="theme-toggle">
-      <ion-icon id="theme-icon" name="moon-outline"></ion-icon>
-    </button>
-    <ul class="navigation">
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-      <li><a href="assets/images/ElijahPotterResume.pdf" download="ElijahPotterResume.pdf" target="_blank"
-          id="glow-on-hover">
-          Resume
-        </a>
-      </li>
-    </ul>
-    <button class="burger-menu" id="burger-menu">
-      <ion-icon class="bars" name="menu-outline"></ion-icon>
-    </button>
-  </nav>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <div class="hover-line">
+          <a href="#home">Elijah Potter</a>
+        </div>
+      </div>
 
-  <!-- Hero Section -->
-  <section class="hero" id="about">
-    <img src="assets/images/ep_logo.png" alt="Elijah-Potter" loading="lazy" class="hero-img" />
-    <div class="bio animate__animated animate__backInUp">
-      <h2 class="bio-title">About Me</h2>
-      <p class="bio-text">
-        Thanks for stopping by! I'm Elijah, a software developer based in Salt Lake City, Utah.
-        I am currently pursuing a degree in Computer Science at the University of Utah. I specialize
-        in Python, Java, and HTML but am always looking to learn more. Please feel free to reach
-        out to me for inquiries or collaborations.
-      </p>
+      <button class="navbar-toggle" id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar-menu" id="navbar-menu">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+          <li class="navbar-item"><a href="#projects" class="navbar-link">Projects</a></li>
+          <li class="navbar-item"><a href="#skills" class="navbar-link">Skills</a></li>
+          <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
+          <li class="navbar-item">
+            <a href="assets/docs/Elijah_Potter_Web_CV.pdf" target="_blank"
+              class="navbar-link navbar-link-resume">Resume</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- More about -->
-  <section class="more-about">
-    <h2>More About Me</h2>
-    <p>
-      I have been interested in the STEM field for as long as I can remember. My father was an electrical engineer,
-      and he was an incredible inspiration for me growing up. I have always been fascinated by the way things work and
-      have fond memories of taking apart my toys (and occasionally my parents' valuables) to see how they worked. This
-      fascination has stuck with me well-into my adulthood, where I am still constantly seeking to learn more about the
-      world around me.
-    </p>
-    <p>
-      Despite my intense interest in science and technology, it took many years to find where exactly I wanted to focus
-      my studies for a future career. When I first started college, I figured I would follow in the footsteps of my
-      father
-      and study electrical engineering. However, it was in the midst of my first programming class that I realized my
-      true
-      passion was in software development. Since then, I have fully dedicated myself to the craft, and I am excited to
-      see where
-      it takes me.
-    </p>
-    <p>
-      Besides technology, I am greatly passionate about art and music. I have been playing the guitar since I was 8
-      years old,
-      and am proficient in other instruments such as the piano, bass, and viola. I have played in several bands and
-      orchestras
-      through the years and have even written and recorded my own music. I also enjoy drawing, writing, and editing
-      photos and
-      videos. Where I spend most of my time, however, is with my wife. We have been married for about a year and greatly
-      enjoy
-      hiking, camping, and playing video games together.
-    </p>
-  </section>
-
-  <!-- Skills section -->
-  <section class="skills" id="skills">
-    <h2 class="skill-header">My Top Skills</h2>
-
-    <div class="first-set animate__animated animate__pulse">
-      <div class="sub-set">
-        <figure>
-          <img src="assets/icons/icons8-python.svg" alt="Python" loading="lazy" class="icon icon-card" />
-          <figcaption>Python</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/icons/icons8-java.svg" alt="Java" loading="lazy" class="icon icon-card" />
-          <figcaption>Java</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/icons/icons8-html-5.svg" alt="HTML" loading="lazy" class="icon icon-card" />
-          <figcaption>HTML</figcaption>
-        </figure>
+  <main>
+    <section id="home">
+      <div class="home-content">
+        <div class="profile-container">
+          <div class="profile-tilt" id="profileTilt">
+            <div class="profile-layer profile-layer-bg">
+              <img src="assets/images/HASTHEMEMORYGONEAREYOUFEELINGNUMB.png" alt="Background">
+            </div>
+            <div class="profile-layer profile-layer-fg">
+              <img src="assets/images/huhwhereami.png" alt="Profile">
+            </div>
+          </div>
+          <div class="social-links" aria-label="Social links">
+            <a href="https://instagram.com/elijah.potts" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://github.com/Celestron1123" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/elijah-a-potter" target="_blank" rel="noopener noreferrer"
+              class="social-link" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://youtube.com/@elijah.potter" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="home-text">
+          <h1>Hi, I'm Elijah</h1>
+          <p>I'm a software developer who's all about creating great digital experiences and building apps that scale. I
+            love writing clean code, tackling interesting challenges, and turning ideas into reality. Stick around and
+            explore some of the projects I've been working on. I think you'll find some cool stuff!</p>
+        </div>
+    </section>
+    <section id="projects">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <div class="section-line"></div>
       </div>
+      <div class="cards-grid">
+        <article class="card" style="--card-bg: url('../images/sake.png');">
+          <div class="card-content">
+            <h3 class="card-title">Brewing Simulator</h3>
+            <p class="card-copy">An educational application exploring the rich complexity of
+              beverage production across the world.</p>
+            <a class="card-btn" target="_blank" href="https://github.com/Celestron1123/Brewing-Sim">GitHub</a>
+          </div>
+        </article>
 
-      <div class="sub-set">
-        <figure>
-          <img src="assets/icons/icons8-csharp.svg" alt="C#" loading="lazy" class="icon icon-card" />
-          <figcaption>C#</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/icons/icons8-css.svg" alt="CSS" loading="lazy" class="icon icon-card" />
-          <figcaption>CSS</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/icons/icons8-javascr.svg" alt="Javascript" loading="lazy" class="icon icon-card" />
-          <figcaption>Javascript</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+        <article class="card" style="--card-bg: url('../images/sploosh.gif')">
+          <div class="card-content">
+            <h3 class="card-title">Sprite Editor</h3>
+            <p class="card-copy">a lightweight application built with C++ and Qt, designed for creating and animating
+              pixel art.</p>
+            <a class="card-btn" target="_blank" href="https://github.com/Celestron1123/Sprite-Editor">GitHub</a>
+          </div>
+        </article>
 
-  <!-- Projects section -->
-  <section class="projects" id="projects">
-    <h2 class="projects-title">Recent Projects</h2>
-    <div class="projects-container animate__animated animate__pulse">
-      <div class="project-container project-card">
-        <img src="assets/images/NLG_text.png" alt="natural language generator" loading="lazy" class="project-pic" />
-        <h3 class="project-title">Natural Language Generator</h3>
-        <p class="project-details">
-          A simple natural language generator that uses a Markov chain to generate
-          unique text based off of a given input.
-        </p>
-        <a href="https://github.com/Celestron1123/Natural-Language-Generator" target="_blank" class="project-link">Check
-          it Out</a>
+        <article class="card" style="--card-bg: url('../images/langcrop.png')">
+          <div class="card-content">
+            <h3 class="card-title">Language Generator</h3>
+            <p class="card-copy">Analyzes a given body of text and produces unique phrases.</p>
+            <a class="card-btn" target="_blank"
+              href="https://github.com/Celestron1123/Natural-Language-Generator">GitHub</a>
+          </div>
+        </article>
       </div>
-      <div class="project-container project-card">
-        <img src="assets/images/brew-sim.png" alt="brew sim" loading="lazy" class="project-pic" />
-        <h3 class="project-title">Brewing Simulator</h3>
-        <p class="project-details">
-          An educational program about the distillation process throughout the world.
-        </p>
-        <a href="https://github.com/Celestron1123/Brewing-Sim" target="_blank" class="project-link">Check it Out</a>
+    </section>
+    <section id="skills">
+      <div class="section-header">
+        <h2>Technical Skills</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="project-container project-card">
-        <img src="assets/images/sploosh.gif" alt="sprite editor" loading="lazy" class="project-pic" />
-        <h3 class="project-title">Sprite Editor</h3>
-        <p class="project-details">
-          A lightweight sprite editor to make pixel art animations.
-        </p>
-        <a href="https://github.com/Celestron1123/Sprite-Editor" target="_blank" class="project-link">Check it Out</a>
-      </div>
-    </div>
-  </section>
+      <div class="skills-grid">
+        <div class="skill-card" data-skill="Java">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-brands fa-java"></i></div>
+                <h3 class="skill-card-title">Java</h3>
+                <p class="skill-card-desc">JVM, OOP, tooling</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
 
-  <!-- Contact section -->
-  <section class="contact" id="contact">
-    <h2>Get In Touch With Me</h2>
-    <div class="contact-form-container">
-      <div class="contact-form">
-        <form action="https://formspree.io/f/mdoqbley" method="POST">
-          <div class="form-control">
+        <div class="skill-card" data-skill="C#">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-solid fa-hashtag"></i></div>
+                <h3 class="skill-card-title">C#</h3>
+                <p class="skill-card-desc">.NET, services, tooling</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="Python">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-brands fa-python"></i></div>
+                <h3 class="skill-card-title">Python</h3>
+                <p class="skill-card-desc">Scripting, NumPy/pandas</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="JavaScript">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-brands fa-js"></i></div>
+                <h3 class="skill-card-title">JavaScript</h3>
+                <p class="skill-card-desc">Frontend logic, tooling</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill=".NET">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3 class="skill-card-title">.NET</h3>
+                <p class="skill-card-desc">APIs, services, tooling</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="Qt">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-solid fa-window-maximize"></i></div>
+                <h3 class="skill-card-title">Qt</h3>
+                <p class="skill-card-desc">C++ UI, QMake/Gradle</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="SQL">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-solid fa-database"></i></div>
+                <h3 class="skill-card-title">SQL</h3>
+                <p class="skill-card-desc">Relational design, queries</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="Docker">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-brands fa-docker"></i></div>
+                <h3 class="skill-card-title">Docker</h3>
+                <p class="skill-card-desc">Containerized dev, deploy</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="Git">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-brands fa-git-alt"></i></div>
+                <h3 class="skill-card-title">Git</h3>
+                <p class="skill-card-desc">Version control, reviews</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="Linux">
+          <div class="skill-card-translater">
+            <div class="skill-card-rotator">
+              <div class="skill-card-content">
+                <div class="skill-card-icon"><i class="fa-brands fa-linux"></i></div>
+                <h3 class="skill-card-title">Linux</h3>
+                <p class="skill-card-desc">CLI, tooling, networking</p>
+              </div>
+              <div class="skill-card-shine"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="section-header">
+        <h2>Contact Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-container">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="sender-name" placeholder="Enter Your Name" class="input-field"
-              required />
+            <input type="text" id="name" name="name" required>
           </div>
-          <div class="form-control">
+
+          <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field"
-              required />
+            <input type="email" id="email" name="email" required>
           </div>
-          <div class="form-control">
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+
+          <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" cols="60" rows="10" placeholder="Enter Your Message" name="message"
-              class="input-field" required></textarea>
+            <textarea id="message" name="message" rows="6" required></textarea>
           </div>
-          <input type="submit" value="Submit" id="submit-btn" class="submit-btn" />
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader" style="display: none;">
+              <i class="fas fa-circle-notch fa-spin"></i>
+            </span>
+          </button>
+
+          <div class="form-status" id="form-status"></div>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Socials-->
-  <div class="socials">
-    <a href="https://www.instagram.com/elijah.potts/" target="_blank"><img src="assets/icons/icons8-instagram.svg"
-        alt="Instagram" loading="lazy" class="socicon" /></a>
-    <a href="https://www.linkedin.com/in/elijah-a-potter/" target="_blank"><img src="assets/icons/icons8-linkedin.svg"
-        alt="Linkedin" loading="lazy" class="socicon" /></a>
-    <a href="https://github.com/Celestron1123/" target="_blank"><img src="assets/icons/icons8-github.svg" alt="Github"
-        class="socicon" /></a>
-    <a href="https://discord.com/users/588518350964129803/" target="_blank"><img src="assets/icons/icons8-discord.svg"
-        alt="Discord" class="socicon" /></a>
-  </div>
-
-  <!-- Footer section -->
-  <footer>
-    <p class="copy">&copy; Copyright 2024</p>
-    <p class="copy">
-      Built by Elijah Potter, with artwork by Lauren Cunningham
-    </p>
-  </footer>
-
-  <!-- Website scripts -->
   <script src="assets/js/app.js"></script>
-
-  <!-- Ion icons scripts -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

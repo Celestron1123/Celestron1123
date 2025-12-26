@@ -1,128 +1,189 @@
-const burger = document.querySelector("#burger-menu");
-const theme = document.querySelector("#theme-toggle");
-const ul = document.querySelector("nav ul");
-const navLink = document.querySelectorAll(".nav-link");
-const secretCode = "aappscsc";
-var key = "";
+// Mobile Menu Toggle
+const navbarToggle = document.getElementById('navbar-toggle');
+const navbarMenu = document.getElementById('navbar-menu');
+const navbarLinks = document.querySelectorAll('.navbar-link');
 
-burger.addEventListener("click", () => {
-    ul.classList.toggle("show");
+navbarToggle.addEventListener('click', () => {
+    navbarMenu.classList.toggle('active');
+    navbarToggle.classList.toggle('active');
 });
 
-// Theme button
-theme.addEventListener("click", function () {
-    var themeStyle = document.querySelector("#theme-style");
-    var themeIcon = document.querySelector("#theme-icon");
-    if (themeStyle.getAttribute("href") == "assets/css/darkstyles.css") {
-        themeStyle.setAttribute("href", "assets/css/styles.css");
-        themeIcon.setAttribute("name", "moon-outline");
-    } else {
-        themeStyle.setAttribute("href", "assets/css/darkstyles.css");
-        themeIcon.setAttribute("name", "sunny-outline");
+// Close menu when a link is clicked
+navbarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        navbarToggle.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) {
+        navbarMenu.classList.remove('active');
+        navbarToggle.classList.remove('active');
     }
 });
 
-// About button
-document.addEventListener("DOMContentLoaded", function () {
-    // Find the About button
-    var aboutButton = Array.from(navLink).find(el => el.textContent === "About");
+// Parallax Tilt Effect
+const profileTilt = document.getElementById('profileTilt');
+const profileLayerBg = document.querySelector('.profile-layer-bg');
+const profileLayerFg = document.querySelector('.profile-layer-fg');
+const MAX_ROTATION = 7; // degrees
 
-    // Add a click event listener to the About button
-    aboutButton.addEventListener("click", function () {
+profileTilt.addEventListener('mousemove', (e) => {
+    const rect = profileTilt.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
 
-        // Prevent default link behavior, offset by 100px, and hide the nav menu
-        event.preventDefault();
-        key = key + "a";
-        ul.classList.remove("show");
-        var targetId = this.getAttribute("href");
-        var targetElement = document.querySelector(targetId);
-        window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: "smooth"
-        });
+    const mouseX = e.clientX - centerX;
+    const mouseY = e.clientY - centerY;
+
+    // Calculate rotation angles
+    const rotateY = (mouseX / (rect.width / 2)) * MAX_ROTATION;
+    const rotateX = -(mouseY / (rect.height / 2)) * MAX_ROTATION;
+
+    // Background moves slower (multiply by 0.6)
+    const bgRotateX = rotateX * 0.6;
+    const bgRotateY = rotateY * 0.6;
+
+    profileTilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    profileLayerBg.style.transform = `translateZ(-25px) scale(1.05) rotateX(${bgRotateX}deg) rotateY(${bgRotateY}deg)`;
+    profileLayerFg.style.transform = `translateZ(25px)`;
+
+    profileTilt.classList.remove('reset');
+});
+
+profileTilt.addEventListener('mouseleave', () => {
+    profileTilt.style.transform = 'rotateX(0) rotateY(0)';
+    profileLayerBg.style.transform = 'translateZ(-25px) scale(1.05) rotateX(0) rotateY(0)';
+    profileLayerFg.style.transform = 'translateZ(25px)';
+    profileTilt.classList.add('reset');
+});
+
+// Skill Cards Interactive 3D Effect
+const skillCards = document.querySelectorAll('.skill-card');
+
+skillCards.forEach(card => {
+    const rotator = card.querySelector('.skill-card-rotator');
+    const shine = card.querySelector('.skill-card-shine');
+
+    card.addEventListener('mouseenter', () => {
+        card.classList.add('active', 'interacting');
+    });
+
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenterX = rect.left + rect.width / 2;
+        const cardCenterY = rect.top + rect.height / 2;
+
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        // Calculate position relative to card
+        const xFromCenter = mouseX - cardCenterX;
+        const yFromCenter = mouseY - cardCenterY;
+
+        // Calculate distance from center (hypotenuse)
+        const distance = Math.sqrt(xFromCenter ** 2 + yFromCenter ** 2);
+        const maxDistance = Math.sqrt((rect.width / 2) ** 2 + (rect.height / 2) ** 2);
+        const hyp = Math.min(distance / maxDistance, 1);
+
+        // Normalize position (0-1)
+        const normalizedX = (mouseX - rect.left) / rect.width;
+        const normalizedY = (mouseY - rect.top) / rect.height;
+
+        // Calculate mouse position percentage for shine
+        const posx = normalizedX * 100;
+        const posy = normalizedY * 100;
+        const mx = normalizedX * 100;
+        const my = normalizedY * 100;
+
+        // Rotation limits
+        const maxRotation = 15;
+        const rotateX = -(yFromCenter / (rect.height / 2)) * maxRotation;
+        const rotateY = (xFromCenter / (rect.width / 2)) * maxRotation;
+
+        // Apply transforms
+        card.style.setProperty('--rx', `${rotateY}deg`);
+        card.style.setProperty('--ry', `${rotateX}deg`);
+        card.style.setProperty('--posx', `${posx}%`);
+        card.style.setProperty('--posy', `${posy}%`);
+        card.style.setProperty('--mx', `${mx}%`);
+        card.style.setProperty('--my', `${my}%`);
+        card.style.setProperty('--hyp', hyp);
+
+        // Update shine gradient position
+        shine.style.backgroundPosition =
+            `0% ${posy}%, ${posx}% ${posy}%, ${posx}% ${posy}%`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('active', 'interacting');
+
+        // Reset transforms with smooth transition
+        rotator.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.320, 1)';
+
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+        card.style.setProperty('--posx', '50%');
+        card.style.setProperty('--posy', '50%');
+        card.style.setProperty('--mx', '50%');
+        card.style.setProperty('--my', '50%');
+        card.style.setProperty('--hyp', '0');
+
+        setTimeout(() => {
+            rotator.style.transition = '';
+        }, 600);
     });
 });
 
-// Skills button
-document.addEventListener("DOMContentLoaded", function () {
-    // Find the Skills button
-    var skillsButton = Array.from(navLink).find(el => el.textContent === "Skills");
+// Contact Form Handler with Formspree
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
 
-    // Add a click event listener to the Skills button
-    skillsButton.addEventListener("click", function () {
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        // Prevent default link behavior, offset by 100px, and hide the nav menu
-        event.preventDefault();
-        key = key + "s";
-        ul.classList.remove("show");
-        var targetId = this.getAttribute("href");
-        var targetElement = document.querySelector(targetId);
-        window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: "smooth"
-        });
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
 
-        // Remove the animation class
-        var firstSet = document.querySelector(".first-set");
-        firstSet.classList.remove("animate__animated", "animate__pulse");
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline-block';
+        formStatus.style.display = 'none';
 
-        // Adding back the animation after a 10ms delay
-        setTimeout(function () {
-            firstSet.classList.add("animate__animated", "animate__pulse");
-        }, 10);
-    });
-});
+        const formData = new FormData(contactForm);
 
-// Projects button
-document.addEventListener("DOMContentLoaded", function () {
-    // Find the Projects button
-    var projectsButton = Array.from(navLink).find(el => el.textContent === "Projects");
+        try {
+            const response = await fetch('https://formspree.io/f/mjgblqao', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-    // Add a click event listener to the Projects button
-    projectsButton.addEventListener("click", function () {
-
-        // Prevent default link behavior, offset by 70px, and hide the nav menu
-        event.preventDefault();
-        key = key + "p";
-        ul.classList.remove("show");
-        var targetId = this.getAttribute("href");
-        var targetElement = document.querySelector(targetId);
-        window.scrollTo({
-            top: targetElement.offsetTop - 70,
-            behavior: "smooth"
-        });
-
-        // Remove the animation class
-        var projects = document.querySelector(".projects-container");
-        projects.classList.remove("animate__animated", "animate__pulse");
-
-        // Adding back the animation after a 10ms delay
-        setTimeout(function () {
-            projects.classList.add("animate__animated", "animate__pulse");
-        }, 10);
-    });
-});
-
-// Contact button
-document.addEventListener("DOMContentLoaded", function () {
-    // Find the Contact button
-    var projectsButton = Array.from(navLink).find(el => el.textContent === "Contact");
-
-    // Add a click event listener to the Contact button
-    projectsButton.addEventListener("click", function () {
-
-        // Prevent default link behavior, offset by 100px, and hide the nav menu
-        event.preventDefault();
-        key = key + "c";
-        if (key === secretCode) {
-            alert(":)");
+            if (response.ok) {
+                showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            showStatus('Oops! Something went wrong. Please try again.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline-block';
+            btnLoader.style.display = 'none';
         }
-        ul.classList.remove("show");
-        var targetId = this.getAttribute("href");
-        var targetElement = document.querySelector(targetId);
-        window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: "smooth"
-        });
     });
-});
+}
+
+function showStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
+    formStatus.style.display = 'block';
+}
