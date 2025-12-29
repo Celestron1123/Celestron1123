@@ -175,7 +175,7 @@ body {
 
 .navbar-toggle.active span:nth-child(2) {
   opacity: 0;
-  /* transform: translateX(-10px); */
+  transform: translateX(-10px) scaleX(0);
 }
 
 .navbar-toggle.active span:nth-child(3) {
