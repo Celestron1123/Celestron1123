@@ -156,10 +156,12 @@ if (contactForm) {
         formStatus.style.display = 'none';
 
         const formData = new FormData(contactForm);
+        const submittedEmail = formData.get('email');
+        formData.set('_replyto', typeof submittedEmail === 'string' ? submittedEmail : '');
 
         try {
-            const response = await fetch('https://formspree.io/f/mjgblqao', {
-                method: 'POST',
+            const response = await fetch(contactForm.action || 'https://formspree.io/f/mjgblqao', {
+                method: contactForm.method || 'POST',
                 body: formData,
                 headers: {
                     'Accept': 'application/json'
@@ -170,10 +172,13 @@ if (contactForm) {
                 showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
                 contactForm.reset();
             } else {
-                throw new Error('Form submission failed');
+                const responseBody = await response.json().catch(() => null);
+                const errorMessage = responseBody?.errors?.[0]?.message || 'Form submission failed';
+                throw new Error(errorMessage);
             }
         } catch (error) {
-            showStatus('Oops! Something went wrong. Please try again.', 'error');
+            const fallbackMessage = 'Oops! Something went wrong. Please try again.';
+            showStatus(error?.message || fallbackMessage, 'error');
         } finally {
             submitBtn.disabled = false;
             btnText.style.display = 'inline-block';
